@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Briefly | Summarizer</title>
+    <link rel="stylesheet" href="/static/summarizer.css">
+        <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>Briefly</header>
+
+    <div class="container">
+        <h2>Summarize your YouTube video</h2>
+        <form action="/summarize" method="post">
+            <input type="text" name="youtube_link" placeholder="Enter YouTube URL">
+            <button type="submit">Summarize</button>
+        </form>
+
+
+        {% if summary %}
+        <div class="summary-box">
+            <h3>✨ Summary</h3>
+            <p class="summary-text">{{ summary }}</p>
+            <a href="/" class="summarize-another-btn">Summarize Another</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
